@@ -677,6 +677,16 @@ h4 {
     font-size: 1.1rem;
 }
 
+.phone-link {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.phone-link:hover {
+    color: var(--color-text-main);
+}
+
 .info-item svg {
     color: var(--color-accent);
 }
