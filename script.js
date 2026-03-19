@@ -118,4 +118,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         requestAnimationFrame(() => drawFrame(images[frameIndex]));
     }
+    // Video Playback Logic
+    const bgVideo = document.querySelector('.premium-bg-video');
+    if (bgVideo) {
+        const playVideo = () => {
+            bgVideo.play().catch(() => { });
+            document.removeEventListener('touchstart', playVideo);
+            document.removeEventListener('click', playVideo);
+        };
+        document.addEventListener('touchstart', playVideo);
+        document.addEventListener('click', playVideo);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    bgVideo.play().catch(() => { });
+                }
+            });
+        }, { threshold: 0.1 });
+        observer.observe(bgVideo);
+    }
 });
