@@ -537,6 +537,7 @@ h4 {
     display: block;
     transform-origin: top center;
     animation: slowZoom 30s ease-in-out alternate infinite;
+    pointer-events: none;
 }
 
 .video-overlay {
