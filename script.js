@@ -138,4 +138,101 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.1 });
         observer.observe(bgVideo);
     }
+
+    // ── Struga Project Slider ─────────────────────────────────
+    const track      = document.getElementById('slider-track');
+    const dotsWrap   = document.getElementById('slider-dots');
+    const prevBtn    = document.getElementById('prev-arrow');
+    const nextBtn    = document.getElementById('next-arrow');
+    const sliderEl   = document.getElementById('struga-slider');
+
+    if (track && sliderEl) {
+        const slides = Array.from(track.querySelectorAll('.slide'));
+        const total  = slides.length;
+        let current  = 0;
+        let autoTimer = null;
+        const INTERVAL = 2000; // 2 seconds
+
+        // Per-slide captions
+        const captions = [
+            'Smart Building — Full KNX Integration',
+            'Central KNX Distribution Panel',
+            'Intelligent Lighting Control',
+            'Motorised Blind & Shading System',
+            'Smart Thermostat & Climate Control',
+            'IP Security Camera Network',
+            'Access Control & Smart Entry',
+            'Intruder Alarm & Detection System',
+            'Autonomous Garden Robot System',
+            'Professional KNX Installation',
+            'System Detail & Component View',
+            'Structured Cable & Wiring',
+            'Control Room & Programming',
+            'Building Exterior & Facade',
+            'Garden Automation & Landscaping',
+        ];
+
+        // Build dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+            dot.addEventListener('click', () => goTo(i));
+            dotsWrap.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsWrap.querySelectorAll('.slider-dot'));
+
+        function goTo(index) {
+            // Remove active Ken Burns from current
+            slides[current].classList.remove('is-active');
+
+            current = (index + total) % total;
+            track.style.transform = `translateX(-${current * 100}%)`;
+
+            // Update dots
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+
+            // Apply Ken Burns to new slide
+            slides[current].classList.add('is-active');
+        }
+
+        function startAuto() {
+            stopAuto();
+            autoTimer = setInterval(() => goTo(current + 1), INTERVAL);
+        }
+
+        function stopAuto() {
+            if (autoTimer) {
+                clearInterval(autoTimer);
+                autoTimer = null;
+            }
+        }
+
+        // Arrow buttons
+        if (prevBtn) prevBtn.addEventListener('click', () => { goTo(current - 1); startAuto(); });
+        if (nextBtn) nextBtn.addEventListener('click', () => { goTo(current + 1); startAuto(); });
+
+        // Pause on hover
+        sliderEl.addEventListener('mouseenter', stopAuto);
+        sliderEl.addEventListener('mouseleave', startAuto);
+
+        // Touch / swipe support
+        let touchStartX = 0;
+        sliderEl.addEventListener('touchstart', e => {
+            touchStartX = e.touches[0].clientX;
+            stopAuto();
+        }, { passive: true });
+        sliderEl.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+            startAuto();
+        }, { passive: true });
+
+        // Init
+        goTo(0);
+        startAuto();
+    }
+    // ─────────────────────────────────────────────────────────
 });
+
