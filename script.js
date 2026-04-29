@@ -24,12 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     const images = [];
+    let currentFrameIndex = 0;
 
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        if (images[0] && images[0].complete) {
-            drawFrame(images[0]);
+        if (images[currentFrameIndex] && images[currentFrameIndex].complete) {
+            drawFrame(images[currentFrameIndex]);
         }
     }
     window.addEventListener('resize', resizeCanvas);
@@ -115,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             frameCount - 1,
             Math.floor(scrollFraction * frameCount)
         );
+        currentFrameIndex = frameIndex;
 
         requestAnimationFrame(() => drawFrame(images[frameIndex]));
     }
