@@ -25,12 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const images = [];
     let currentFrameIndex = 0;
+    let stableHeight = window.innerHeight;
+    let lastWidth = window.innerWidth;
 
     function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        if (images[currentFrameIndex] && images[currentFrameIndex].complete) {
-            drawFrame(images[currentFrameIndex]);
+        // Only resize canvas if width changes (orientation change) or on first load
+        if (window.innerWidth !== lastWidth || !canvas.width) {
+            lastWidth = window.innerWidth;
+            stableHeight = window.innerHeight;
+            
+            canvas.width = window.innerWidth;
+            canvas.height = stableHeight;
+            if (images[currentFrameIndex] && images[currentFrameIndex].complete) {
+                drawFrame(images[currentFrameIndex]);
+            }
         }
     }
     window.addEventListener('resize', resizeCanvas);
@@ -102,14 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateImageSequence() {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
-        const scrollRange = sectionHeight - window.innerHeight;
+        // Use stableHeight to avoid jumpiness when mobile URL bar hides/shows
+        const scrollRange = sectionHeight - stableHeight;
 
         let scrollYOffset = animationScrollTop - sectionTop;
 
         if (scrollYOffset < 0) scrollYOffset = 0;
         if (scrollYOffset > scrollRange) scrollYOffset = scrollRange;
 
-        let scrollFraction = scrollYOffset / scrollRange;
+        // Prevent division by zero if scrollRange is 0
+        let scrollFraction = scrollRange > 0 ? scrollYOffset / scrollRange : 0;
         if (isNaN(scrollFraction)) scrollFraction = 0;
 
         const frameIndex = Math.min(
