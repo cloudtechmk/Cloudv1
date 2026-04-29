@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('hero-canvas');
     const context = canvas.getContext('2d');
     const section = document.getElementById('hero-scroll-sequence');
+    const stickyContainer = section.querySelector('.sticky-container');
 
     const frameCount = 144;
     const currentFrame = index => (
@@ -34,8 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
             lastWidth = window.innerWidth;
             stableHeight = window.innerHeight;
             
-            canvas.width = window.innerWidth;
-            canvas.height = stableHeight;
+            // Lock heights with inline styles to override vh jumps on in-app browsers
+            section.style.height = `${stableHeight * 1.5}px`;
+            if (stickyContainer) stickyContainer.style.height = `${stableHeight}px`;
+            canvas.style.height = `${stableHeight}px`;
+            
+            // Multiply canvas pixel dimensions by devicePixelRatio to prevent blurriness
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = window.innerWidth * dpr;
+            canvas.height = stableHeight * dpr;
+            
             if (images[currentFrameIndex] && images[currentFrameIndex].complete) {
                 drawFrame(images[currentFrameIndex]);
             }
