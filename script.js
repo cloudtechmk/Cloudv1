@@ -26,24 +26,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const images = [];
     let currentFrameIndex = 0;
-    let stableHeight = window.innerHeight;
+    
+    // Variables for smooth frame interpolation
+    let targetFrameIndex = 0;
+    let currentFrameFloat = 0;
+    let isAnimating = false;
+    let hasInitializedFrame = false;
     let lastWidth = window.innerWidth;
 
     function resizeCanvas() {
-        // Only resize canvas if width changes (orientation change) or on first load
         if (window.innerWidth !== lastWidth || !canvas.width) {
             lastWidth = window.innerWidth;
-            stableHeight = window.innerHeight;
             
-            // Lock heights with inline styles to override vh jumps on in-app browsers
-            section.style.height = `${stableHeight * 1.5}px`;
-            if (stickyContainer) stickyContainer.style.height = `${stableHeight}px`;
-            canvas.style.height = `${stableHeight}px`;
+            // Remove any inline styles we set previously
+            section.style.height = '';
+            if (stickyContainer) stickyContainer.style.height = '';
+            canvas.style.height = '';
             
-            // Multiply canvas pixel dimensions by devicePixelRatio to prevent blurriness
-            const dpr = window.devicePixelRatio || 1;
-            canvas.width = window.innerWidth * dpr;
-            canvas.height = stableHeight * dpr;
+            // Revert to 1x pixel ratio to avoid bad upscaling of low-res source images
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
             
             if (images[currentFrameIndex] && images[currentFrameIndex].complete) {
                 drawFrame(images[currentFrameIndex]);
@@ -119,8 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateImageSequence() {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
-        // Use stableHeight to avoid jumpiness when mobile URL bar hides/shows
-        const scrollRange = sectionHeight - stableHeight;
+        const scrollRange = sectionHeight - window.innerHeight;
 
         let scrollYOffset = animationScrollTop - sectionTop;
 
@@ -131,14 +132,49 @@ document.addEventListener('DOMContentLoaded', () => {
         let scrollFraction = scrollRange > 0 ? scrollYOffset / scrollRange : 0;
         if (isNaN(scrollFraction)) scrollFraction = 0;
 
-        const frameIndex = Math.min(
+        targetFrameIndex = Math.min(
             frameCount - 1,
             Math.floor(scrollFraction * frameCount)
         );
-        currentFrameIndex = frameIndex;
 
-        requestAnimationFrame(() => drawFrame(images[frameIndex]));
+        if (!hasInitializedFrame) {
+            currentFrameFloat = targetFrameIndex;
+            currentFrameIndex = targetFrameIndex;
+            hasInitializedFrame = true;
+            if (images[currentFrameIndex] && images[currentFrameIndex].complete) {
+                drawFrame(images[currentFrameIndex]);
+            }
+            return;
+        }
+
+        if (!isAnimating) {
+            isAnimating = true;
+            requestAnimationFrame(renderLoop);
+        }
     }
+
+    function renderLoop() {
+        // Smoothly interpolate current frame towards target frame
+        currentFrameFloat += (targetFrameIndex - currentFrameFloat) * 0.15;
+        let roundedFrame = Math.round(currentFrameFloat);
+        
+        if (roundedFrame !== currentFrameIndex) {
+            currentFrameIndex = roundedFrame;
+            if (images[currentFrameIndex] && images[currentFrameIndex].complete) {
+                drawFrame(images[currentFrameIndex]);
+            }
+        }
+
+        if (Math.abs(targetFrameIndex - currentFrameFloat) > 0.1) {
+            requestAnimationFrame(renderLoop);
+        } else {
+            isAnimating = false;
+        }
+    }
+
+    // Set initial frame correctly
+    animationScrollTop = window.scrollY;
+    updateImageSequence();
     // Video Playback Logic
     const bgVideo = document.querySelector('.premium-bg-video');
     if (bgVideo) {
