@@ -33,19 +33,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let isAnimating = false;
     let hasInitializedFrame = false;
     let lastWidth = window.innerWidth;
+    let lastHeight = window.innerHeight;
 
     function resizeCanvas() {
-        if (window.innerWidth !== lastWidth || !canvas.width) {
-            lastWidth = window.innerWidth;
-            
+        const dpr = window.devicePixelRatio || 1;
+        const newWidth = window.innerWidth * dpr;
+        const newHeight = window.innerHeight * dpr;
+
+        if (canvas.width !== newWidth || canvas.height !== newHeight) {
             // Remove any inline styles we set previously
             section.style.height = '';
             if (stickyContainer) stickyContainer.style.height = '';
             canvas.style.height = '';
             
-            // Revert to 1x pixel ratio to avoid bad upscaling of low-res source images
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            canvas.width = newWidth;
+            canvas.height = newHeight;
+            
+            context.imageSmoothingEnabled = true;
+            context.imageSmoothingQuality = 'high';
             
             if (images[currentFrameIndex] && images[currentFrameIndex].complete) {
                 drawFrame(images[currentFrameIndex]);
