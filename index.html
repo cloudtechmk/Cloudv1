@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloud Automation | Premium Smart Home Solutions</title>
-    <meta name="description"
+    <meta name="description" id="meta-description"
         content="Premium Smart Home Solutions in Skopje and Struga. Control your entire home with simple voice commands via Alexa, Google Home, or Siri.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +34,20 @@
 
 <body>
 
+    <!-- Navigation Bar -->
+    <nav class="main-nav" id="main-nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <img src="assets/images/weblogo.png" alt="Cloud Tech">
+            </a>
+            <div class="lang-switcher" id="lang-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="mk">МК</button>
+                <button class="lang-btn" data-lang="sq">SQ</button>
+            </div>
+        </div>
+    </nav>
+
     <main>
         <section id="hero-scroll-sequence" class="scroll-sequence">
             <div class="sticky-container">
@@ -42,13 +56,13 @@
                 <div class="hero-overlay">
                     <div class="container hero-content">
                         <img src="assets/images/weblogo.png" alt="Cloud Automation Logo" class="hero-logo" />
-                        <h1 class="hero-headline">Your Smarter <span class="accent-text">World</span></h1>
+                        <h1 class="hero-headline" data-i18n-html="hero_headline">Your Smarter <span class="accent-text">World</span></h1>
                         <p class="hero-subheadline" id="typing-text"></p>
                     </div>
                 </div>
 
                 <div class="bottom-cta-container">
-                    <a href="#about" class="btn-primary-ghost scroll-down-btn">Explore More</a>
+                    <a href="#about" class="btn-primary-ghost scroll-down-btn" data-i18n="explore_more">Explore More</a>
                 </div>
             </div>
         </section>
@@ -56,8 +70,8 @@
         <section id="about" class="about-section">
             <div class="container about-container">
                 <div class="about-text">
-                    <h2 class="section-title">About Us</h2>
-                    <p class="about-description"><span class="accent-text">Cloud Tech</span> is a leading smart home
+                    <h2 class="section-title" data-i18n="about_title">About Us</h2>
+                    <p class="about-description" data-i18n-html="about_desc"><span class="accent-text">Cloud Tech</span> is a leading smart home
                         automation provider based in North Macedonia. We create intuitive, reliable automation systems
                         that enhance the comfort, convenience, and security of your space, transforming ordinary
                         environments into intelligent ones.</p>
@@ -65,11 +79,11 @@
                 <div class="about-stats">
                     <div class="glass-card stat-card">
                         <div class="stat-number">10+</div>
-                        <div class="stat-label">Years Experience</div>
+                        <div class="stat-label" data-i18n="stat_years">Years Experience</div>
                     </div>
                     <div class="glass-card stat-card">
                         <div class="stat-number">100+</div>
-                        <div class="stat-label">Projects Successfully Completed</div>
+                        <div class="stat-label" data-i18n="stat_projects">Projects Successfully Completed</div>
                     </div>
                 </div>
             </div>
@@ -77,19 +91,19 @@
 
         <section id="technology" class="technology-section">
             <div class="container">
-                <h2 class="section-title">The Technology Ecosystem</h2>
+                <h2 class="section-title" data-i18n="tech_title">The Technology Ecosystem</h2>
                 <div class="tech-grid">
                     <div class="glass-card tech-card">
                         <div class="tech-image-wrapper">
                             <img src="assets/images/KNX.jpg" alt="KNX Protocol" />
                         </div>
                         <div class="tech-content">
-                            <h3>KNX Solutions</h3>
-                            <p class="tech-desc">The Global Standard for Professional Home Control.</p>
+                            <h3 data-i18n="tech_knx_title">KNX Solutions</h3>
+                            <p class="tech-desc" data-i18n="tech_knx_desc">The Global Standard for Professional Home Control.</p>
                             <ul class="tech-features">
-                                <li><span class="accent-bullet"></span>Lighting &amp; Blind Control</li>
-                                <li><span class="accent-bullet"></span>Heating &amp; Cooling Systems</li>
-                                <li><span class="accent-bullet"></span>Comprehensive Security Alarms</li>
+                                <li><span class="accent-bullet"></span><span data-i18n="tech_knx_f1">Lighting &amp; Blind Control</span></li>
+                                <li><span class="accent-bullet"></span><span data-i18n="tech_knx_f2">Heating &amp; Cooling Systems</span></li>
+                                <li><span class="accent-bullet"></span><span data-i18n="tech_knx_f3">Comprehensive Security Alarms</span></li>
                             </ul>
                         </div>
                     </div>
@@ -99,12 +113,12 @@
                             <img src="assets/images/home-assistant.jpg" alt="Home Assistant" />
                         </div>
                         <div class="tech-content">
-                            <h3>Home Assistant</h3>
-                            <p class="tech-desc">The ultimate hub for local privacy and total integration.</p>
+                            <h3 data-i18n="tech_ha_title">Home Assistant</h3>
+                            <p class="tech-desc" data-i18n="tech_ha_desc">The ultimate hub for local privacy and total integration.</p>
                             <ul class="tech-features">
-                                <li><span class="accent-bullet"></span>Full Control on One App</li>
-                                <li><span class="accent-bullet"></span>Camera &amp; Access Integration</li>
-                                <li><span class="accent-bullet"></span>Voice Control with Amazon Alexa</li>
+                                <li><span class="accent-bullet"></span><span data-i18n="tech_ha_f1">Full Control on One App</span></li>
+                                <li><span class="accent-bullet"></span><span data-i18n="tech_ha_f2">Camera &amp; Access Integration</span></li>
+                                <li><span class="accent-bullet"></span><span data-i18n="tech_ha_f3">Voice Control with Amazon Alexa</span></li>
                             </ul>
                         </div>
                     </div>
@@ -114,12 +128,12 @@
                             <img src="assets/images/openhabv2.png" alt="OpenHAB" />
                         </div>
                         <div class="tech-content">
-                            <h3>openHAB</h3>
-                            <p class="tech-desc">Open-source home automation platform for seamless integration.</p>
+                            <h3 data-i18n="tech_oh_title">openHAB</h3>
+                            <p class="tech-desc" data-i18n="tech_oh_desc">Open-source home automation platform for seamless integration.</p>
                             <ul class="tech-features">
-                                <li><span class="accent-bullet"></span>Universal Device Integration</li>
-                                <li><span class="accent-bullet"></span>Rule-Based Automations</li>
-                                <li><span class="accent-bullet"></span>Cross-Platform &amp; Local Control</li>
+                                <li><span class="accent-bullet"></span><span data-i18n="tech_oh_f1">Universal Device Integration</span></li>
+                                <li><span class="accent-bullet"></span><span data-i18n="tech_oh_f2">Rule-Based Automations</span></li>
+                                <li><span class="accent-bullet"></span><span data-i18n="tech_oh_f3">Cross-Platform &amp; Local Control</span></li>
                             </ul>
                         </div>
                     </div>
@@ -128,12 +142,12 @@
                             <img src="assets/images/Ai.jpg" alt="Self Learning AI" />
                         </div>
                         <div class="tech-content">
-                            <h3>Self Learning AI</h3>
-                            <p class="tech-desc">Intelligent optimization adapting to your daily routines.</p>
+                            <h3 data-i18n="tech_ai_title">Self Learning AI</h3>
+                            <p class="tech-desc" data-i18n="tech_ai_desc">Intelligent optimization adapting to your daily routines.</p>
                             <ul class="tech-features">
-                                <li><span class="accent-bullet"></span>Behavioral Analytics</li>
-                                <li><span class="accent-bullet"></span>Energy Consumption Reduction</li>
-                                <li><span class="accent-bullet"></span>Proactive Environment Control</li>
+                                <li><span class="accent-bullet"></span><span data-i18n="tech_ai_f1">Behavioral Analytics</span></li>
+                                <li><span class="accent-bullet"></span><span data-i18n="tech_ai_f2">Energy Consumption Reduction</span></li>
+                                <li><span class="accent-bullet"></span><span data-i18n="tech_ai_f3">Proactive Environment Control</span></li>
                             </ul>
                         </div>
                     </div>
@@ -153,29 +167,29 @@
         <!-- Struga Project Showcase -->
         <section id="struga-project" class="project-showcase-section">
             <div class="container">
-                <h2 class="section-title project-section-title">Featured Project</h2>
-                <p class="project-intro">A comprehensive, fully integrated smart building installation in the heart of Struga, Macedonia — engineered entirely on the KNX protocol. From intelligent lighting and motorised blinds to climate control, security cameras, access systems, intruder alarms, and autonomous garden robots, every element of this project was designed to operate as one seamless, future-proof ecosystem.</p>
+                <h2 class="section-title project-section-title" data-i18n="project_title">Featured Project</h2>
+                <p class="project-intro" data-i18n="project_intro">A comprehensive, fully integrated smart building installation in the heart of Struga, Macedonia — engineered entirely on the KNX protocol. From intelligent lighting and motorised blinds to climate control, security cameras, access systems, intruder alarms, and autonomous garden robots, every element of this project was designed to operate as one seamless, future-proof ecosystem.</p>
 
                 <div class="project-slider-wrapper">
                     <!-- Slider -->
                     <div class="project-slider" id="struga-slider">
                         <div class="slider-viewport">
                             <div class="slider-track" id="slider-track">
-                                <div class="slide"><img src="Projects/img1.jpg" alt="Struga Project – Smart Building"></div>
-                                <div class="slide"><img src="Projects/img2.jpg" alt="Struga Project – KNX Panel"></div>
-                                <div class="slide"><img src="Projects/img3.jpg" alt="Struga Project – Lighting Control"></div>
-                                <div class="slide"><img src="Projects/img4.jpg" alt="Struga Project – Smart Blinds"></div>
-                                <div class="slide"><img src="Projects/img5.jpg" alt="Struga Project – Thermostat System"></div>
-                                <div class="slide"><img src="Projects/img6.jpg" alt="Struga Project – Security Cameras"></div>
-                                <div class="slide"><img src="Projects/img7.jpg" alt="Struga Project – Access Control"></div>
-                                <div class="slide"><img src="Projects/img8.jpg" alt="Struga Project – Alarm System"></div>
-                                <div class="slide"><img src="Projects/img9.jpg" alt="Struga Project – Garden Robots"></div>
-                                <div class="slide"><img src="Projects/img10.jpg" alt="Struga Project – Installation"></div>
-                                <div class="slide"><img src="Projects/img11.jpg" alt="Struga Project – Detail"></div>
-                                <div class="slide"><img src="Projects/img12.jpg" alt="Struga Project – Wiring"></div>
-                                <div class="slide"><img src="Projects/img13.jpg" alt="Struga Project – Control Room"></div>
-                                <div class="slide"><img src="Projects/img14.jpg" alt="Struga Project – Exterior"></div>
-                                <div class="slide"><img src="Projects/img15.jpg" alt="Struga Project – Garden Automation"></div>
+                                <div class="slide"><img src="Projects/img1.jpg" alt="Struga Project – Smart Building" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img2.jpg" alt="Struga Project – KNX Panel" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img3.jpg" alt="Struga Project – Lighting Control" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img4.jpg" alt="Struga Project – Smart Blinds" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img5.jpg" alt="Struga Project – Thermostat System" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img6.jpg" alt="Struga Project – Security Cameras" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img7.jpg" alt="Struga Project – Access Control" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img8.jpg" alt="Struga Project – Alarm System" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img9.jpg" alt="Struga Project – Garden Robots" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img10.jpg" alt="Struga Project – Installation" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img11.jpg" alt="Struga Project – Detail" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img12.jpg" alt="Struga Project – Wiring" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img13.jpg" alt="Struga Project – Control Room" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img14.jpg" alt="Struga Project – Exterior" loading="eager"></div>
+                                <div class="slide"><img src="Projects/img15.jpg" alt="Struga Project – Garden Automation" loading="eager"></div>
                             </div>
                         </div>
 
@@ -183,9 +197,9 @@
                         <div class="slide-info">
                             <div class="slide-location">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                                Struga, North Macedonia
+                                <span data-i18n="project_location">Struga, North Macedonia</span>
                             </div>
-                            <p class="slide-caption">Smart Building — Full KNX Integration</p>
+                            <p class="slide-caption" data-i18n="project_caption">Smart Building — Full KNX Integration</p>
                         </div>
 
                         <!-- Dot indicators -->
@@ -198,32 +212,96 @@
 
                     <!-- Plain white feature list -->
                     <ul class="project-features-list">
-                        <li>KNX Protocol — Full Bus System</li>
-                        <li>Smart Lighting Control</li>
-                        <li>Motorised Blinds & Shading</li>
-                        <li>Climate Control & Thermostats</li>
-                        <li>IP Security Cameras</li>
-                        <li>Access Control & Smart Entry</li>
-                        <li>Intruder Alarm System</li>
-                        <li>Autonomous Garden Robots</li>
+                        <li data-i18n="pf_1">KNX Protocol — Full Bus System</li>
+                        <li data-i18n="pf_2">Smart Lighting Control</li>
+                        <li data-i18n="pf_3">Motorised Blinds & Shading</li>
+                        <li data-i18n="pf_4">Climate Control & Thermostats</li>
+                        <li data-i18n="pf_5">IP Security Cameras</li>
+                        <li data-i18n="pf_6">Access Control & Smart Entry</li>
+                        <li data-i18n="pf_7">Intruder Alarm System</li>
+                        <li data-i18n="pf_8">Autonomous Garden Robots</li>
                     </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="reviews-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="reviews_title">What Our Clients Say</h2>
+                <div class="reviews-grid">
+                    <div class="review-card glass-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text" data-i18n="review_1_text">"Cloud Tech transformed our apartment completely. The lighting scenes and voice control through Alexa work flawlessly. Best investment we've made for our home."</p>
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Stefan</span>
+                            <span class="reviewer-divider">·</span>
+                            <span class="reviewer-city">Skopje</span>
+                            <span class="reviewer-divider">·</span>
+                            <span class="reviewer-role" data-i18n="review_1_role">Homeowner</span>
+                        </div>
+                    </div>
+                    <div class="review-card glass-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text" data-i18n="review_2_text">"From the first consultation to final installation, the team was professional and knowledgeable. Our villa now runs itself — climate, blinds, cameras, all in one app."</p>
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Elena</span>
+                            <span class="reviewer-divider">·</span>
+                            <span class="reviewer-city">Ohrid</span>
+                            <span class="reviewer-divider">·</span>
+                            <span class="reviewer-role" data-i18n="review_2_role">Villa Owner</span>
+                        </div>
+                    </div>
+                    <div class="review-card glass-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text" data-i18n="review_3_text">"We hired Cloud Tech for our office and the results exceeded expectations. Energy costs dropped and the access control system gives us total peace of mind."</p>
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Marko</span>
+                            <span class="reviewer-divider">·</span>
+                            <span class="reviewer-city">Bitola</span>
+                            <span class="reviewer-divider">·</span>
+                            <span class="reviewer-role" data-i18n="review_3_role">Business Owner</span>
+                        </div>
+                    </div>
+                    <div class="review-card glass-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text" data-i18n="review_4_text">"I was skeptical at first, but now I can't imagine living without it. The system learned our routines within a week. Incredible technology."</p>
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Ana</span>
+                            <span class="reviewer-divider">·</span>
+                            <span class="reviewer-city">Struga</span>
+                            <span class="reviewer-divider">·</span>
+                            <span class="reviewer-role" data-i18n="review_4_role">Apartment Owner</span>
+                        </div>
+                    </div>
+                    <div class="review-card glass-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text" data-i18n="review_5_text">"Excellent service, fast installation, and the app is so simple to use. The team explained everything clearly. Highly recommend to anyone considering a smart home."</p>
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Darko</span>
+                            <span class="reviewer-divider">·</span>
+                            <span class="reviewer-city">Tetovo</span>
+                            <span class="reviewer-divider">·</span>
+                            <span class="reviewer-role" data-i18n="review_5_role">Homeowner</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="capabilities" class="capabilities-section marquee-section">
             <div class="container">
-                <h2 class="section-title">Endless Possibilities</h2>
+                <h2 class="section-title" data-i18n="endless_title">Endless Possibilities</h2>
 
                 <div class="alexa-inner">
                     <img src="assets/images/AGA.webp" alt="AGA Smart Home" class="alexa-bg-img">
                     <div class="alexa-img-fog"></div>
                     <div class="alexa-content-col">
-                        <p class="alexa-desc">Control your entire home with a simple voice command. Set up personalized
+                        <p class="alexa-desc" data-i18n="alexa_desc_1">Control your entire home with a simple voice command. Set up personalized
                             scenarios that activate multiple devices at once — all without touching a single button.</p>
-                        <p class="alexa-desc">Monitor your home's energy consumption in real time, track usage patterns,
+                        <p class="alexa-desc" data-i18n="alexa_desc_2">Monitor your home's energy consumption in real time, track usage patterns,
                             and let the system automatically optimize to reduce waste and lower your bills.</p>
-                        <p class="alexa-desc">Everything in one application — lights, blinds, thermostats, smart locks,
+                        <p class="alexa-desc" data-i18n="alexa_desc_3">Everything in one application — lights, blinds, thermostats, smart locks,
                             cameras, and many more opportunities for a truly intelligent living environment.</p>
                     </div>
                 </div>
@@ -279,7 +357,7 @@
         <div class="container footer-content">
             <div class="cta-wrapper">
                 <a href="https://wa.me/38972227620?text=Hello%20Cloud%20Automation,%20I%20am%20interested%20in%20a%20smart%20home%20project."
-                    class="btn-primary cta-btn" target="_blank" rel="noopener noreferrer">Free Consultation</a>
+                    class="btn-primary cta-btn" target="_blank" rel="noopener noreferrer" data-i18n="free_consultation">Free Consultation</a>
             </div>
 
             <div class="contact-info">
@@ -315,7 +393,7 @@
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
                     </svg>
-                    <span>Based in Skopje &amp; Struga</span>
+                    <span data-i18n="footer_location">Based in Skopje &amp; Struga</span>
                 </a>
                 <div class="social-links">
                     <a href="https://www.instagram.com/cloudtech_mk/" class="social-icon" aria-label="Instagram"
@@ -337,10 +415,42 @@
                 </div>
             </div>
 
-            <p class="copyright">&copy; 2026 Cloud Automation. All rights reserved.</p>
+            <p class="copyright" data-i18n="copyright">&copy; 2026 Cloud Automation. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/38972227620?text=Hello%20Cloud%20Automation,%20I%20am%20interested%20in%20a%20smart%20home%20project." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-container" id="chatbot">
+        <button class="chatbot-bubble" id="chatbot-bubble" aria-label="Open Chat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </button>
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <span class="chatbot-title" data-i18n="chat_title">Cloud Assistant</span>
+                <button class="chatbot-close" id="chatbot-close">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages"></div>
+            <div class="chatbot-chips" id="chatbot-chips">
+                <button class="chip" data-chip="knx" data-i18n="chat_chip_knx">KNX Info</button>
+                <button class="chip" data-chip="pricing" data-i18n="chat_chip_pricing">Pricing</button>
+                <button class="chip" data-chip="ha" data-i18n="chat_chip_ha">Home Assistant</button>
+                <button class="chip" data-chip="contact" data-i18n="chat_chip_contact">Contact Us</button>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbot-input" data-i18n-placeholder="chat_placeholder" placeholder="Ask me anything...">
+                <button id="chatbot-send" aria-label="Send message">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 
