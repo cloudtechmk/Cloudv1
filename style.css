@@ -243,7 +243,7 @@ p {
 }
 
 .hero-logo {
-    width: 120px;
+    width: 180px;
     height: auto;
     margin-bottom: 2rem;
     filter: drop-shadow(0 4px 12px rgba(15, 33, 56, 0.08));
@@ -291,14 +291,17 @@ p {
 }
 
 .hero-btn-outlined {
-    background: transparent;
+    background: var(--color-white);
     color: var(--color-navy);
     border: 2px solid var(--color-navy);
+    box-shadow: var(--shadow-soft);
 }
 
 .hero-btn-outlined:hover {
     background: var(--color-navy);
     color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
 }
 
 /* Hero Stats Row */
@@ -450,7 +453,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid rgba(15, 33, 56, 0.05);
+    border-bottom: none;
 }
 
 .tech-image-wrapper img {
@@ -1513,7 +1516,7 @@ input:focus-visible {
     }
 
     .hero-logo {
-        width: 90px;
+        width: 130px;
         height: auto;
         margin-bottom: 1.5rem;
     }
