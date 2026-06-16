@@ -293,17 +293,19 @@ p {
 }
 
 .hero-btn-outlined {
-    background: var(--color-white);
-    color: var(--color-accent-dark);
-    border: 2px solid var(--color-accent-dark);
+    background: linear-gradient(var(--color-white), var(--color-white)) padding-box,
+                var(--gradient-accent) border-box;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    color: var(--color-navy);
     box-shadow: var(--shadow-soft);
 }
 
 .hero-btn-outlined:hover {
-    background: var(--color-accent-dark);
-    color: var(--color-white);
+    background: var(--gradient-accent);
+    color: var(--color-navy);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 107, 26, 0.25);
+    box-shadow: 0 8px 25px rgba(255, 107, 26, 0.35);
 }
 
 /* Hero Stats Row */
