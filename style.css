@@ -77,12 +77,7 @@ p {
     color: var(--color-navy);
 }
 
-/* White section titles on light blue backgrounds */
-.technology-section .section-title,
-.reviews-section .section-title {
-    color: var(--color-white);
-    text-shadow: 0 1px 3px rgba(15, 33, 56, 0.08);
-}
+
 
 .accent-text {
     background-image: linear-gradient(135deg, #FFE08A 0%, #FFB347 50%, #FF6B1A 100%) !important;
@@ -299,16 +294,16 @@ p {
 
 .hero-btn-outlined {
     background: var(--color-white);
-    color: var(--color-navy);
-    border: 2px solid var(--color-navy);
+    color: var(--color-accent-dark);
+    border: 2px solid var(--color-accent-dark);
     box-shadow: var(--shadow-soft);
 }
 
 .hero-btn-outlined:hover {
-    background: var(--color-navy);
+    background: var(--color-accent-dark);
     color: var(--color-white);
     transform: translateY(-3px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: 0 6px 20px rgba(255, 107, 26, 0.25);
 }
 
 /* Hero Stats Row */
