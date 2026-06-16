@@ -77,6 +77,13 @@ p {
     color: var(--color-navy);
 }
 
+/* White section titles on light blue backgrounds */
+.technology-section .section-title,
+.reviews-section .section-title {
+    color: var(--color-white);
+    text-shadow: 0 1px 3px rgba(15, 33, 56, 0.08);
+}
+
 .accent-text {
     background-image: linear-gradient(135deg, #FFE08A 0%, #FFB347 50%, #FF6B1A 100%) !important;
     -webkit-background-clip: text !important;
