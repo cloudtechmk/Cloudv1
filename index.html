@@ -9,11 +9,11 @@
         content="Premium Smart Home Solutions in Skopje and Struga. Control your entire home with simple voice commands via Alexa, Google Home, or Siri.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/images/weblogo.png">
-    <link rel="apple-touch-icon" href="assets/images/weblogo.png">
+    <link rel="stylesheet" href="style.css?v=1.6">
+    <link rel="icon" type="image/png" href="assets/images/logo.PNG">
+    <link rel="apple-touch-icon" href="assets/images/logo.PNG">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -34,58 +34,92 @@
 
 <body>
 
-    <!-- Navigation Bar -->
     <nav class="main-nav" id="main-nav">
         <div class="nav-inner">
             <a href="#" class="nav-logo">
-                <img src="assets/images/weblogo.png" alt="Cloud Tech">
+                <img src="assets/images/logo.PNG" alt="Cloud Tech">
             </a>
-            <div class="lang-switcher" id="lang-switcher">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="mk">МК</button>
-                <button class="lang-btn" data-lang="sq">SQ</button>
+            <div class="nav-actions">
+                <div class="lang-switcher" id="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="mk">МК</button>
+                    <button class="lang-btn" data-lang="sq">SQ</button>
+                </div>
+                <a href="https://wa.me/38972227620?text=Hello%20Cloud%20Automation,%20I%20am%20interested%20in%20a%20smart%20home%20project."
+                    class="btn-primary-ghost btn-header-cta" target="_blank" rel="noopener noreferrer" data-i18n="free_consultation">Free Consultation</a>
             </div>
         </div>
     </nav>
 
     <main>
-        <section id="hero-scroll-sequence" class="scroll-sequence">
-            <div class="sticky-container">
-                <canvas id="hero-canvas"></canvas>
-                <div class="mobile-hero-bg"></div>
-                <div class="hero-overlay">
-                    <div class="container hero-content">
-                        <img src="assets/images/weblogo.png" alt="Cloud Automation Logo" class="hero-logo" />
-                        <h1 class="hero-headline" data-i18n-html="hero_headline">Your Smarter <span class="accent-text">World</span></h1>
-                        <p class="hero-subheadline" id="typing-text"></p>
+        <section id="hero" class="hero-section">
+            <div class="hero-overlay">
+                <div class="container hero-content">
+                    <img src="assets/images/logo.PNG" alt="Cloud Automation Logo" class="hero-logo" />
+                    <h1 class="hero-headline" data-i18n-html="hero_headline">Your Smarter <span class="accent-text">World</span></h1>
+                    <p class="hero-subheadline" id="typing-text"></p>
+                    
+                    <div class="hero-ctas">
+                        <a href="https://wa.me/38972227620?text=Hello%20Cloud%20Automation,%20I%20am%20interested%20in%20a%20smart%20home%20project."
+                            class="btn-primary hero-btn-filled" target="_blank" rel="noopener noreferrer" data-i18n="free_consultation">Free Consultation</a>
+                        <a href="#about" class="btn-primary-ghost hero-btn-outlined" data-i18n="explore_more">Explore More</a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label" data-i18n="stat_years">Years Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label" data-i18n="stat_projects">Projects Successfully Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label" data-i18n="stat_support">Support</div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="bottom-cta-container">
-                    <a href="#about" class="btn-primary-ghost scroll-down-btn" data-i18n="explore_more">Explore More</a>
-                </div>
+            </div>
+            
+            <div class="hero-divider">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="sunrise-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#FFE08A" />
+                            <stop offset="50%" stop-color="#FFB347" />
+                            <stop offset="100%" stop-color="#FF6B1A" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" fill="#FFFFFF"></path>
+                    <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0" fill="none" stroke="url(#sunrise-grad)" stroke-width="4"></path>
+                </svg>
             </div>
         </section>
 
         <section id="about" class="about-section">
             <div class="container about-container">
-                <div class="about-text">
+                <div class="about-text-only">
                     <h2 class="section-title" data-i18n="about_title">About Us</h2>
                     <p class="about-description" data-i18n-html="about_desc"><span class="accent-text">Cloud Tech</span> is a leading smart home
                         automation provider based in North Macedonia. We create intuitive, reliable automation systems
                         that enhance the comfort, convenience, and security of your space, transforming ordinary
                         environments into intelligent ones.</p>
                 </div>
-                <div class="about-stats">
-                    <div class="glass-card stat-card">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label" data-i18n="stat_years">Years Experience</div>
-                    </div>
-                    <div class="glass-card stat-card">
-                        <div class="stat-number">100+</div>
-                        <div class="stat-label" data-i18n="stat_projects">Projects Successfully Completed</div>
-                    </div>
-                </div>
+            </div>
+            
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="sunrise-grad-about" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#FFE08A" />
+                            <stop offset="50%" stop-color="#FFB347" />
+                            <stop offset="100%" stop-color="#FF6B1A" />
+                        </linearGradient>
+                    </defs>
+                    <path class="divider-fill" d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+                    <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0" fill="none" stroke="url(#sunrise-grad-about)" stroke-width="4"></path>
+                </svg>
             </div>
         </section>
 
@@ -154,23 +188,31 @@
 
                 </div>
             </div>
-        </section>
-
-        <section class="video-showcase">
-            <div class="video-container">
-                <video src="assets/video/Berryv2.mp4" autoplay loop muted="muted" playsinline webkit-playsinline
-                    preload="auto" oncontextmenu="return false;" class="premium-bg-video"></video>
-                <div class="video-overlay"></div>
+            
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="sunrise-grad-tech" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#FFE08A" />
+                            <stop offset="50%" stop-color="#FFB347" />
+                            <stop offset="100%" stop-color="#FF6B1A" />
+                        </linearGradient>
+                    </defs>
+                    <path class="divider-fill" d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+                    <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0" fill="none" stroke="url(#sunrise-grad-tech)" stroke-width="4"></path>
+                </svg>
             </div>
         </section>
+
 
         <!-- Struga Project Showcase -->
         <section id="struga-project" class="project-showcase-section">
             <div class="container">
-                <h2 class="section-title project-section-title" data-i18n="project_title">Featured Project</h2>
-                <p class="project-intro" data-i18n="project_intro">A comprehensive, fully integrated smart building installation in the heart of Struga, Macedonia — engineered entirely on the KNX protocol. From intelligent lighting and motorised blinds to climate control, security cameras, access systems, intruder alarms, and autonomous garden robots, every element of this project was designed to operate as one seamless, future-proof ecosystem.</p>
+                <div class="project-panel">
+                    <h2 class="section-title project-section-title" data-i18n="project_title">Featured Project</h2>
+                    <p class="project-intro" data-i18n="project_intro">A comprehensive, fully integrated smart building installation in the heart of Struga, Macedonia — engineered entirely on the KNX protocol. From intelligent lighting and motorised blinds to climate control, security cameras, access systems, intruder alarms, and autonomous garden robots, every element of this project was designed to operate as one seamless, future-proof ecosystem.</p>
 
-                <div class="project-slider-wrapper">
+                    <div class="project-slider-wrapper">
                     <!-- Slider -->
                     <div class="project-slider" id="struga-slider">
                         <div class="slider-viewport">
@@ -222,6 +264,21 @@
                         <li data-i18n="pf_8">Autonomous Garden Robots</li>
                     </ul>
                 </div>
+                </div> <!-- ends project-panel -->
+            </div>
+            
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="sunrise-grad-project" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#FFE08A" />
+                            <stop offset="50%" stop-color="#FFB347" />
+                            <stop offset="100%" stop-color="#FF6B1A" />
+                        </linearGradient>
+                    </defs>
+                    <path class="divider-fill" d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+                    <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0" fill="none" stroke="url(#sunrise-grad-project)" stroke-width="4"></path>
+                </svg>
             </div>
         </section>
 
@@ -229,63 +286,100 @@
         <section id="reviews" class="reviews-section">
             <div class="container">
                 <h2 class="section-title" data-i18n="reviews_title">What Our Clients Say</h2>
-                <div class="reviews-grid">
-                    <div class="review-card glass-card">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text" data-i18n="review_1_text">"Cloud Tech transformed our apartment completely. The lighting scenes and voice control through Alexa work flawlessly. Best investment we've made for our home."</p>
-                        <div class="reviewer-info">
-                            <span class="reviewer-name">Stefan</span>
-                            <span class="reviewer-divider">·</span>
-                            <span class="reviewer-city">Skopje</span>
-                            <span class="reviewer-divider">·</span>
-                            <span class="reviewer-role" data-i18n="review_1_role">Homeowner</span>
+                <div class="reviews-slider-container">
+                    <div class="reviews-slider" id="reviews-slider">
+                        <div class="reviews-viewport">
+                            <div class="reviews-track" id="reviews-track">
+                                <div class="review-slide">
+                                    <div class="review-card">
+                                        <div class="review-stars">★★★★★</div>
+                                        <p class="review-text" data-i18n="review_1_text">"Cloud Tech transformed our apartment completely. The lighting scenes and voice control through Alexa work flawlessly. Best investment we've made for our home."</p>
+                                        <div class="reviewer-info">
+                                            <span class="reviewer-name">Stefan</span>
+                                            <span class="reviewer-divider">·</span>
+                                            <span class="reviewer-city">Skopje</span>
+                                            <span class="reviewer-divider">·</span>
+                                            <span class="reviewer-role" data-i18n="review_1_role">Homeowner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-slide">
+                                    <div class="review-card">
+                                        <div class="review-stars">★★★★★</div>
+                                        <p class="review-text" data-i18n="review_2_text">"From the first consultation to final installation, the team was professional and knowledgeable. Our villa now runs itself — climate, blinds, cameras, all in one app."</p>
+                                        <div class="reviewer-info">
+                                            <span class="reviewer-name">Elena</span>
+                                            <span class="reviewer-divider">·</span>
+                                            <span class="reviewer-city">Ohrid</span>
+                                            <span class="reviewer-divider">·</span>
+                                            <span class="reviewer-role" data-i18n="review_2_role">Villa Owner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-slide">
+                                    <div class="review-card">
+                                        <div class="review-stars">★★★★★</div>
+                                        <p class="review-text" data-i18n="review_3_text">"We hired Cloud Tech for our office and the results exceeded expectations. Energy costs dropped and the access control system gives us total peace of mind."</p>
+                                        <div class="reviewer-info">
+                                            <span class="reviewer-name">Marko</span>
+                                            <span class="reviewer-divider">·</span>
+                                            <span class="reviewer-city">Bitola</span>
+                                            <span class="reviewer-divider">·</span>
+                                            <span class="reviewer-role" data-i18n="review_3_role">Business Owner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-slide">
+                                    <div class="review-card">
+                                        <div class="review-stars">★★★★★</div>
+                                        <p class="review-text" data-i18n="review_4_text">"I was skeptical at first, but now I can't imagine living without it. The system learned our routines within a week. Incredible technology."</p>
+                                        <div class="reviewer-info">
+                                            <span class="reviewer-name">Ana</span>
+                                            <span class="reviewer-divider">·</span>
+                                            <span class="reviewer-city">Struga</span>
+                                            <span class="reviewer-divider">·</span>
+                                            <span class="reviewer-role" data-i18n="review_4_role">Apartment Owner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-slide">
+                                    <div class="review-card">
+                                        <div class="review-stars">★★★★★</div>
+                                        <p class="review-text" data-i18n="review_5_text">"Excellent service, fast installation, and the app is so simple to use. The team explained everything clearly. Highly recommend to anyone considering a smart home."</p>
+                                        <div class="reviewer-info">
+                                            <span class="reviewer-name">Darko</span>
+                                            <span class="reviewer-divider">·</span>
+                                            <span class="reviewer-city">Tetovo</span>
+                                            <span class="reviewer-divider">·</span>
+                                            <span class="reviewer-role" data-i18n="review_5_role">Homeowner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="review-card glass-card">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text" data-i18n="review_2_text">"From the first consultation to final installation, the team was professional and knowledgeable. Our villa now runs itself — climate, blinds, cameras, all in one app."</p>
-                        <div class="reviewer-info">
-                            <span class="reviewer-name">Elena</span>
-                            <span class="reviewer-divider">·</span>
-                            <span class="reviewer-city">Ohrid</span>
-                            <span class="reviewer-divider">·</span>
-                            <span class="reviewer-role" data-i18n="review_2_role">Villa Owner</span>
-                        </div>
-                    </div>
-                    <div class="review-card glass-card">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text" data-i18n="review_3_text">"We hired Cloud Tech for our office and the results exceeded expectations. Energy costs dropped and the access control system gives us total peace of mind."</p>
-                        <div class="reviewer-info">
-                            <span class="reviewer-name">Marko</span>
-                            <span class="reviewer-divider">·</span>
-                            <span class="reviewer-city">Bitola</span>
-                            <span class="reviewer-divider">·</span>
-                            <span class="reviewer-role" data-i18n="review_3_role">Business Owner</span>
-                        </div>
-                    </div>
-                    <div class="review-card glass-card">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text" data-i18n="review_4_text">"I was skeptical at first, but now I can't imagine living without it. The system learned our routines within a week. Incredible technology."</p>
-                        <div class="reviewer-info">
-                            <span class="reviewer-name">Ana</span>
-                            <span class="reviewer-divider">·</span>
-                            <span class="reviewer-city">Struga</span>
-                            <span class="reviewer-divider">·</span>
-                            <span class="reviewer-role" data-i18n="review_4_role">Apartment Owner</span>
-                        </div>
-                    </div>
-                    <div class="review-card glass-card">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text" data-i18n="review_5_text">"Excellent service, fast installation, and the app is so simple to use. The team explained everything clearly. Highly recommend to anyone considering a smart home."</p>
-                        <div class="reviewer-info">
-                            <span class="reviewer-name">Darko</span>
-                            <span class="reviewer-divider">·</span>
-                            <span class="reviewer-city">Tetovo</span>
-                            <span class="reviewer-divider">·</span>
-                            <span class="reviewer-role" data-i18n="review_5_role">Homeowner</span>
-                        </div>
+                        
+                        <!-- Dot indicators -->
+                        <div class="reviews-dots" id="reviews-dots"></div>
+
+                        <!-- Nav arrows -->
+                        <button class="reviews-arrow prev-arrow" id="review-prev-arrow" aria-label="Previous review">&#8249;</button>
+                        <button class="reviews-arrow next-arrow" id="review-next-arrow" aria-label="Next review">&#8250;</button>
                     </div>
                 </div>
+            </div>
+            
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="sunrise-grad-reviews" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#FFE08A" />
+                            <stop offset="50%" stop-color="#FFB347" />
+                            <stop offset="100%" stop-color="#FF6B1A" />
+                        </linearGradient>
+                    </defs>
+                    <path class="divider-fill" d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+                    <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0" fill="none" stroke="url(#sunrise-grad-reviews)" stroke-width="4"></path>
+                </svg>
             </div>
         </section>
 
@@ -355,6 +449,10 @@
 
     <footer class="glass-footer">
         <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="assets/images/logo.PNG" alt="Cloud Tech Logo" class="footer-logo">
+            </div>
+            
             <div class="cta-wrapper">
                 <a href="https://wa.me/38972227620?text=Hello%20Cloud%20Automation,%20I%20am%20interested%20in%20a%20smart%20home%20project."
                     class="btn-primary cta-btn" target="_blank" rel="noopener noreferrer" data-i18n="free_consultation">Free Consultation</a>
@@ -451,7 +549,7 @@
     </div>
 
     <script src="translations.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=1.2"></script>
 </body>
 
 </html>

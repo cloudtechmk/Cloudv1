@@ -82,154 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ── Hero Canvas Scroll Sequence ──
-    const canvas = document.getElementById('hero-canvas');
-    const context = canvas.getContext('2d');
-    const section = document.getElementById('hero-scroll-sequence');
-    const stickyContainer = section.querySelector('.sticky-container');
 
-    const frameCount = 144;
-    const currentFrame = index => (
-        `HomeFrames/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`
-    );
-
-    const images = [];
-    let currentFrameIndex = 0;
-    let targetFrameIndex = 0;
-    let currentFrameFloat = 0;
-    let isAnimating = false;
-    let hasInitializedFrame = false;
-
-    function resizeCanvas() {
-        const dpr = window.devicePixelRatio || 1;
-        const newWidth = window.innerWidth * dpr;
-        const newHeight = window.innerHeight * dpr;
-        if (canvas.width !== newWidth || canvas.height !== newHeight) {
-            section.style.height = '';
-            if (stickyContainer) stickyContainer.style.height = '';
-            canvas.style.height = '';
-            canvas.width = newWidth;
-            canvas.height = newHeight;
-            context.imageSmoothingEnabled = true;
-            context.imageSmoothingQuality = 'high';
-            if (images[currentFrameIndex] && images[currentFrameIndex].complete) {
-                drawFrame(images[currentFrameIndex]);
-            }
-        }
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    let loadedImagesCount = 0;
-    const preloadPromise = new Promise((resolve) => {
-        for (let i = 0; i < frameCount; i++) {
-            const img = new Image();
-            img.onload = () => {
-                loadedImagesCount++;
-                if (i === 0) requestAnimationFrame(() => drawFrame(img));
-                if (loadedImagesCount >= Math.min(10, frameCount) && i === 0) resolve();
-                if (loadedImagesCount === frameCount) resolve();
-            };
-            img.onerror = () => {
-                loadedImagesCount++;
-                if (loadedImagesCount === frameCount) resolve();
-            };
-            img.src = currentFrame(i);
-            images.push(img);
-        }
-    });
-
-    function drawFrame(img) {
-        if (!img || !img.complete) return;
-        const sWidth = img.width;
-        const sHeight = img.height * 0.93;
-        const canvasRatio = canvas.width / canvas.height;
-        const imgRatio = sWidth / sHeight;
-        let drawWidth, drawHeight, offsetX = 0, offsetY = 0;
-        if (canvasRatio > imgRatio) {
-            drawWidth = canvas.width;
-            drawHeight = drawWidth / imgRatio;
-            offsetY = (canvas.height - drawHeight) / 2;
-        } else {
-            drawHeight = canvas.height;
-            drawWidth = drawHeight * imgRatio;
-            offsetX = (canvas.width - drawWidth) / 2;
-        }
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        context.drawImage(img, 0, 0, sWidth, sHeight, offsetX, offsetY, drawWidth, drawHeight);
-    }
-
-    let animationScrollTop = 0;
-    let isTicking = false;
-
-    window.addEventListener('scroll', () => {
-        animationScrollTop = window.scrollY;
-        if (!isTicking) {
-            window.requestAnimationFrame(() => {
-                updateImageSequence();
-                isTicking = false;
-            });
-            isTicking = true;
-        }
-    });
-
-    function updateImageSequence() {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const scrollRange = sectionHeight - window.innerHeight;
-        let scrollYOffset = animationScrollTop - sectionTop;
-        if (scrollYOffset < 0) scrollYOffset = 0;
-        if (scrollYOffset > scrollRange) scrollYOffset = scrollRange;
-        let scrollFraction = scrollRange > 0 ? scrollYOffset / scrollRange : 0;
-        if (isNaN(scrollFraction)) scrollFraction = 0;
-        targetFrameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount));
-        if (!hasInitializedFrame) {
-            currentFrameFloat = targetFrameIndex;
-            currentFrameIndex = targetFrameIndex;
-            hasInitializedFrame = true;
-            if (images[currentFrameIndex] && images[currentFrameIndex].complete) drawFrame(images[currentFrameIndex]);
-            return;
-        }
-        if (!isAnimating) {
-            isAnimating = true;
-            requestAnimationFrame(renderLoop);
-        }
-    }
-
-    function renderLoop() {
-        currentFrameFloat += (targetFrameIndex - currentFrameFloat) * 0.15;
-        let roundedFrame = Math.round(currentFrameFloat);
-        if (roundedFrame !== currentFrameIndex) {
-            currentFrameIndex = roundedFrame;
-            if (images[currentFrameIndex] && images[currentFrameIndex].complete) drawFrame(images[currentFrameIndex]);
-        }
-        if (Math.abs(targetFrameIndex - currentFrameFloat) > 0.1) {
-            requestAnimationFrame(renderLoop);
-        } else {
-            isAnimating = false;
-        }
-    }
-
-    animationScrollTop = window.scrollY;
-    updateImageSequence();
-
-    // ── Video Playback ──
-    const bgVideo = document.querySelector('.premium-bg-video');
-    if (bgVideo) {
-        const playVideo = () => {
-            bgVideo.play().catch(() => { });
-            document.removeEventListener('touchstart', playVideo);
-            document.removeEventListener('click', playVideo);
-        };
-        document.addEventListener('touchstart', playVideo);
-        document.addEventListener('click', playVideo);
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) bgVideo.play().catch(() => { });
-            });
-        }, { threshold: 0.1 });
-        observer.observe(bgVideo);
-    }
 
     // ── Struga Project Slider (MANUAL ONLY — no auto-play) ──
     const track = document.getElementById('slider-track');
@@ -382,6 +235,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 500);
             });
         });
+    }
+
+    // ── Reviews Slider ──
+    const reviewsTrack = document.getElementById('reviews-track');
+    const reviewsDotsWrap = document.getElementById('reviews-dots');
+    const reviewPrevBtn = document.getElementById('review-prev-arrow');
+    const reviewNextBtn = document.getElementById('review-next-arrow');
+    const reviewsSliderEl = document.getElementById('reviews-slider');
+
+    if (reviewsTrack && reviewsSliderEl) {
+        const reviewSlides = Array.from(reviewsTrack.querySelectorAll('.review-slide'));
+        const totalReviews = reviewSlides.length;
+        let currentReview = 0;
+
+        // Build dots
+        reviewSlides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'reviews-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', `Go to review ${i + 1}`);
+            dot.addEventListener('click', () => goToReview(i));
+            reviewsDotsWrap.appendChild(dot);
+        });
+
+        const reviewDots = Array.from(reviewsDotsWrap.querySelectorAll('.reviews-dot'));
+
+        function goToReview(index) {
+            reviewSlides[currentReview].classList.remove('is-active');
+            currentReview = (index + totalReviews) % totalReviews;
+            reviewsTrack.style.transform = `translateX(-${currentReview * 100}%)`;
+            reviewDots.forEach((d, i) => d.classList.toggle('active', i === currentReview));
+            reviewSlides[currentReview].classList.add('is-active');
+        }
+
+        // Arrow buttons
+        if (reviewPrevBtn) reviewPrevBtn.addEventListener('click', () => goToReview(currentReview - 1));
+        if (reviewNextBtn) reviewNextBtn.addEventListener('click', () => goToReview(currentReview + 1));
+
+        // Touch / swipe support
+        let touchStartX = 0;
+        reviewsSliderEl.addEventListener('touchstart', e => {
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        reviewsSliderEl.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) goToReview(diff > 0 ? currentReview + 1 : currentReview - 1);
+        }, { passive: true });
+
+        goToReview(0);
     }
 
     // ── Initialize Language ──
