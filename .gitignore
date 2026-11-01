@@ -18,3 +18,14 @@ __pycache__/
 
 # Environment
 .env
+website-materials/
+
+# drafts and backups (not part of the live site)
+v2/
+v3/
+old-site/
+v4/
+v5/
+v6/
+cloudtech-site-upload.zip
+old-noir/

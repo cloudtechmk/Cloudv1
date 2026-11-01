@@ -1,555 +1,261 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" data-bg="white">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Automation | Premium Smart Home Solutions</title>
-    <meta name="description" id="meta-description"
-        content="Premium Smart Home Solutions in Skopje and Struga. Control your entire home with simple voice commands via Alexa, Google Home, or Siri.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=2.1">
-    <link rel="icon" type="image/png" href="assets/images/logo.PNG">
-    <link rel="apple-touch-icon" href="assets/images/logo.PNG">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cloudtech.mk/">
-    <meta property="og:title" content="Cloud Automation | Premium Smart Home Solutions">
-    <meta property="og:description"
-        content="Premium Smart Home Solutions in Skopje and Struga. Control your entire home with simple voice commands via Alexa, Google Home, or Siri.">
-    <meta property="og:image" content="assets/images/urlimage.jpg">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://cloudtech.mk/">
-    <meta name="twitter:title" content="Cloud Automation | Premium Smart Home Solutions">
-    <meta name="twitter:description"
-        content="Premium Smart Home Solutions in Skopje and Struga. Control your entire home with simple voice commands via Alexa, Google Home, or Siri.">
-    <meta name="twitter:image" content="assets/images/urlimage.jpg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CloudTech | Official KNX Partner · Smart Homes & Electrical</title>
+<meta name="description" content="CloudTech designs, wires and programs smart homes on KNX, Home Assistant and openHAB, plus complete electrical installations. Official KNX Partner.">
+<meta name="theme-color" content="#1E2316">
+<meta property="og:title" content="CloudTech | Official KNX Partner">
+<meta property="og:description" content="One system. Every room. Smart homes designed, wired and programmed by one team.">
+<meta property="og:image" content="https://cloudtech.mk/img/home-lit.webp">
+<meta property="og:url" content="https://cloudtech.mk/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://cloudtech.mk/">
+<link rel="icon" href="img/logo-ember.png">
+<link rel="apple-touch-icon" href="img/logo-ember.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/home-night.webp" media="(min-width: 641px)">
+<link rel="preload" as="image" href="img/home-night-m.webp" media="(max-width: 640px)">
+<link rel="stylesheet" href="style.css">
 </head>
+<body class="is-loading">
 
-<body>
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__top"><span>CLOUDTECH / SYSTEM</span><span>KNX BUS <i></i> CONNECTING</span></div>
+  <div class="loader__count"><span id="loadNum">000</span></div>
+  <div class="loader__bar"><span id="loadBar"></span></div>
+  <div class="loader__bottom"><span>41.1772° N · 20.6788° E</span><span>OFFICIAL KNX PARTNER · 151377</span></div>
+</div>
 
-    <nav class="main-nav" id="main-nav">
-        <div class="nav-inner">
-            <a href="#" class="nav-logo">
-                <img src="assets/images/logo.PNG" alt="Cloud Tech">
-            </a>
-            <div class="nav-actions">
-                <div class="lang-switcher" id="lang-switcher">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="mk">МК</button>
-                    <button class="lang-btn" data-lang="sq">SQ</button>
-                </div>
-                <a href="https://wa.me/38972227620?text=Hello%20Cloud%20Automation,%20I%20am%20interested%20in%20a%20smart%20home%20project."
-                    class="btn-primary-ghost btn-header-cta" target="_blank" rel="noopener noreferrer" data-i18n="free_consultation">Free Consultation</a>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <section id="hero" class="hero-section">
-            <div class="hero-overlay">
-                <div class="container hero-content">
-                    <img src="assets/images/logo.PNG" alt="Cloud Automation Logo" class="hero-logo" />
-                    <h1 class="hero-headline" data-i18n-html="hero_headline">Your Smarter <span class="accent-text">World</span></h1>
-                    <p class="hero-subheadline" id="typing-text"></p>
-                    
-                    <div class="hero-ctas">
-                        <a href="https://wa.me/38972227620?text=Hello%20Cloud%20Automation,%20I%20am%20interested%20in%20a%20smart%20home%20project."
-                            class="btn-primary hero-btn-filled" target="_blank" rel="noopener noreferrer" data-i18n="free_consultation">Free Consultation</a>
-                        <a href="#about" class="btn-primary-ghost hero-btn-outlined" data-i18n="explore_more">Explore More</a>
-                    </div>
-                    
-                    <div class="hero-stats">
-                        <div class="stat-card">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label" data-i18n="stat_years">Years Experience</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">100+</div>
-                            <div class="stat-label" data-i18n="stat_projects">Projects Successfully Completed</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label" data-i18n="stat_support">Support</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="hero-divider">
-                <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="sunrise-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#FFE08A" />
-                            <stop offset="50%" stop-color="#FFB347" />
-                            <stop offset="100%" stop-color="#FF6B1A" />
-                        </linearGradient>
-                    </defs>
-                    <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" fill="#FFFFFF"></path>
-                    <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0" fill="none" stroke="url(#sunrise-grad)" stroke-width="4"></path>
-                </svg>
-            </div>
-        </section>
-
-        <section id="about" class="about-section">
-            <div class="container about-container">
-                <div class="about-text-only">
-                    <h2 class="section-title" data-i18n="about_title">About Us</h2>
-                    <p class="about-description" data-i18n-html="about_desc"><span class="accent-text">Cloud Tech</span> is a leading smart home
-                        automation provider based in North Macedonia. We create intuitive, reliable automation systems
-                        that enhance the comfort, convenience, and security of your space, transforming ordinary
-                        environments into intelligent ones.</p>
-                </div>
-            </div>
-            
-            <div class="section-divider">
-                <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="sunrise-grad-about" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#FFE08A" />
-                            <stop offset="50%" stop-color="#FFB347" />
-                            <stop offset="100%" stop-color="#FF6B1A" />
-                        </linearGradient>
-                    </defs>
-                    <path class="divider-fill" d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-                    <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0" fill="none" stroke="url(#sunrise-grad-about)" stroke-width="4"></path>
-                </svg>
-            </div>
-        </section>
-
-        <section id="technology" class="technology-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="tech_title">The Technology Ecosystem</h2>
-                <div class="tech-grid">
-                    <div class="glass-card tech-card">
-                        <div class="tech-image-wrapper">
-                            <img src="assets/images/KNX.jpg" alt="KNX Protocol" />
-                        </div>
-                        <div class="tech-content">
-                            <h3 data-i18n="tech_knx_title">KNX Solutions</h3>
-                            <p class="tech-desc" data-i18n="tech_knx_desc">The Global Standard for Professional Home Control.</p>
-                            <ul class="tech-features">
-                                <li><span class="accent-bullet"></span><span data-i18n="tech_knx_f1">Lighting &amp; Blind Control</span></li>
-                                <li><span class="accent-bullet"></span><span data-i18n="tech_knx_f2">Heating &amp; Cooling Systems</span></li>
-                                <li><span class="accent-bullet"></span><span data-i18n="tech_knx_f3">Comprehensive Security Alarms</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="glass-card tech-card">
-                        <div class="tech-image-wrapper">
-                            <img src="assets/images/home-assistant.jpg" alt="Home Assistant" />
-                        </div>
-                        <div class="tech-content">
-                            <h3 data-i18n="tech_ha_title">Home Assistant</h3>
-                            <p class="tech-desc" data-i18n="tech_ha_desc">The ultimate hub for local privacy and total integration.</p>
-                            <ul class="tech-features">
-                                <li><span class="accent-bullet"></span><span data-i18n="tech_ha_f1">Full Control on One App</span></li>
-                                <li><span class="accent-bullet"></span><span data-i18n="tech_ha_f2">Camera &amp; Access Integration</span></li>
-                                <li><span class="accent-bullet"></span><span data-i18n="tech_ha_f3">Voice Control with Amazon Alexa</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="glass-card tech-card">
-                        <div class="tech-image-wrapper">
-                            <img src="assets/images/openhabv2.png" alt="OpenHAB" />
-                        </div>
-                        <div class="tech-content">
-                            <h3 data-i18n="tech_oh_title">openHAB</h3>
-                            <p class="tech-desc" data-i18n="tech_oh_desc">Open-source home automation platform for seamless integration.</p>
-                            <ul class="tech-features">
-                                <li><span class="accent-bullet"></span><span data-i18n="tech_oh_f1">Universal Device Integration</span></li>
-                                <li><span class="accent-bullet"></span><span data-i18n="tech_oh_f2">Rule-Based Automations</span></li>
-                                <li><span class="accent-bullet"></span><span data-i18n="tech_oh_f3">Cross-Platform &amp; Local Control</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="glass-card tech-card">
-                        <div class="tech-image-wrapper">
-                            <img src="assets/images/Ai.jpg" alt="Self Learning AI" />
-                        </div>
-                        <div class="tech-content">
-                            <h3 data-i18n="tech_ai_title">Self Learning AI</h3>
-                            <p class="tech-desc" data-i18n="tech_ai_desc">Intelligent optimization adapting to your daily routines.</p>
-                            <ul class="tech-features">
-                                <li><span class="accent-bullet"></span><span data-i18n="tech_ai_f1">Behavioral Analytics</span></li>
-                                <li><span class="accent-bullet"></span><span data-i18n="tech_ai_f2">Energy Consumption Reduction</span></li>
-                                <li><span class="accent-bullet"></span><span data-i18n="tech_ai_f3">Proactive Environment Control</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            
-            <div class="section-divider">
-                <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="sunrise-grad-tech" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#FFE08A" />
-                            <stop offset="50%" stop-color="#FFB347" />
-                            <stop offset="100%" stop-color="#FF6B1A" />
-                        </linearGradient>
-                    </defs>
-                    <path class="divider-fill" d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-                    <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0" fill="none" stroke="url(#sunrise-grad-tech)" stroke-width="4"></path>
-                </svg>
-            </div>
-        </section>
-
-
-        <!-- Struga Project Showcase -->
-        <section id="struga-project" class="project-showcase-section">
-            <div class="container">
-                <div class="project-panel">
-                    <h2 class="section-title project-section-title" data-i18n="project_title">Featured Project</h2>
-                    <p class="project-intro" data-i18n="project_intro">A comprehensive, fully integrated smart building installation in the heart of Struga, Macedonia — engineered entirely on the KNX protocol. From intelligent lighting and motorised blinds to climate control, security cameras, access systems, intruder alarms, and autonomous garden robots, every element of this project was designed to operate as one seamless, future-proof ecosystem.</p>
-
-                    <div class="project-slider-wrapper">
-                    <!-- Slider -->
-                    <div class="project-slider" id="struga-slider">
-                        <div class="slider-viewport">
-                            <div class="slider-track" id="slider-track">
-                                <div class="slide"><img src="projects/img1.jpg" alt="Struga Project – Smart Building" loading="eager"></div>
-                                <div class="slide"><img src="projects/img2.jpg" alt="Struga Project – KNX Panel" loading="eager"></div>
-                                <div class="slide"><img src="projects/img3.jpg" alt="Struga Project – Lighting Control" loading="eager"></div>
-                                <div class="slide"><img src="projects/img4.jpg" alt="Struga Project – Smart Blinds" loading="eager"></div>
-                                <div class="slide"><img src="projects/img5.jpg" alt="Struga Project – Thermostat System" loading="eager"></div>
-                                <div class="slide"><img src="projects/img6.jpg" alt="Struga Project – Security Cameras" loading="eager"></div>
-                                <div class="slide"><img src="projects/img7.jpg" alt="Struga Project – Access Control" loading="eager"></div>
-                                <div class="slide"><img src="projects/img8.jpg" alt="Struga Project – Alarm System" loading="eager"></div>
-                                <div class="slide"><img src="projects/img9.jpg" alt="Struga Project – Garden Robots" loading="eager"></div>
-                                <div class="slide"><img src="projects/img10.jpg" alt="Struga Project – Installation" loading="eager"></div>
-                                <div class="slide"><img src="projects/img11.jpg" alt="Struga Project – Detail" loading="eager"></div>
-                                <div class="slide"><img src="projects/img12.jpg" alt="Struga Project – Wiring" loading="eager"></div>
-                                <div class="slide"><img src="projects/img13.jpg" alt="Struga Project – Control Room" loading="eager"></div>
-                                <div class="slide"><img src="projects/img14.jpg" alt="Struga Project – Exterior" loading="eager"></div>
-                                <div class="slide"><img src="projects/img15.jpg" alt="Struga Project – Garden Automation" loading="eager"></div>
-                            </div>
-                        </div>
-
-                        <!-- Slide info overlay -->
-                        <div class="slide-info">
-                            <div class="slide-location">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                                <span data-i18n="project_location">Struga, North Macedonia</span>
-                            </div>
-                            <p class="slide-caption" data-i18n="project_caption">Smart Building — Full KNX Integration</p>
-                        </div>
-
-                        <!-- Dot indicators -->
-                        <div class="slider-dots" id="slider-dots"></div>
-
-                        <!-- Nav arrows -->
-                        <button class="slider-arrow prev-arrow" id="prev-arrow" aria-label="Previous slide">&#8249;</button>
-                        <button class="slider-arrow next-arrow" id="next-arrow" aria-label="Next slide">&#8250;</button>
-                    </div>
-
-                    <!-- Plain white feature list -->
-                    <ul class="project-features-list">
-                        <li data-i18n="pf_1">KNX Protocol — Full Bus System</li>
-                        <li data-i18n="pf_2">Smart Lighting Control</li>
-                        <li data-i18n="pf_3">Motorised Blinds & Shading</li>
-                        <li data-i18n="pf_4">Climate Control & Thermostats</li>
-                        <li data-i18n="pf_5">IP Security Cameras</li>
-                        <li data-i18n="pf_6">Access Control & Smart Entry</li>
-                        <li data-i18n="pf_7">Intruder Alarm System</li>
-                        <li data-i18n="pf_8">Autonomous Garden Robots</li>
-                    </ul>
-                </div>
-                </div> <!-- ends project-panel -->
-            </div>
-            
-            <div class="section-divider">
-                <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="sunrise-grad-project" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#FFE08A" />
-                            <stop offset="50%" stop-color="#FFB347" />
-                            <stop offset="100%" stop-color="#FF6B1A" />
-                        </linearGradient>
-                    </defs>
-                    <path class="divider-fill" d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-                    <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0" fill="none" stroke="url(#sunrise-grad-project)" stroke-width="4"></path>
-                </svg>
-            </div>
-        </section>
-
-        <!-- Reviews Section -->
-        <section id="reviews" class="reviews-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="reviews_title">What Our Clients Say</h2>
-                <div class="reviews-slider-container">
-                    <div class="reviews-slider" id="reviews-slider">
-                        <div class="reviews-viewport">
-                            <div class="reviews-track" id="reviews-track">
-                                <div class="review-slide">
-                                    <div class="review-card">
-                                        <div class="review-stars">★★★★★</div>
-                                        <p class="review-text" data-i18n="review_1_text">"Cloud Tech transformed our apartment completely. The lighting scenes and voice control through Alexa work flawlessly. Best investment we've made for our home."</p>
-                                        <div class="reviewer-info">
-                                            <span class="reviewer-name">Stefan</span>
-                                            <span class="reviewer-divider">·</span>
-                                            <span class="reviewer-city">Skopje</span>
-                                            <span class="reviewer-divider">·</span>
-                                            <span class="reviewer-role" data-i18n="review_1_role">Homeowner</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="review-slide">
-                                    <div class="review-card">
-                                        <div class="review-stars">★★★★★</div>
-                                        <p class="review-text" data-i18n="review_2_text">"From the first consultation to final installation, the team was professional and knowledgeable. Our villa now runs itself — climate, blinds, cameras, all in one app."</p>
-                                        <div class="reviewer-info">
-                                            <span class="reviewer-name">Elena</span>
-                                            <span class="reviewer-divider">·</span>
-                                            <span class="reviewer-city">Ohrid</span>
-                                            <span class="reviewer-divider">·</span>
-                                            <span class="reviewer-role" data-i18n="review_2_role">Villa Owner</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="review-slide">
-                                    <div class="review-card">
-                                        <div class="review-stars">★★★★★</div>
-                                        <p class="review-text" data-i18n="review_3_text">"We hired Cloud Tech for our office and the results exceeded expectations. Energy costs dropped and the access control system gives us total peace of mind."</p>
-                                        <div class="reviewer-info">
-                                            <span class="reviewer-name">Marko</span>
-                                            <span class="reviewer-divider">·</span>
-                                            <span class="reviewer-city">Bitola</span>
-                                            <span class="reviewer-divider">·</span>
-                                            <span class="reviewer-role" data-i18n="review_3_role">Business Owner</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="review-slide">
-                                    <div class="review-card">
-                                        <div class="review-stars">★★★★★</div>
-                                        <p class="review-text" data-i18n="review_4_text">"I was skeptical at first, but now I can't imagine living without it. The system learned our routines within a week. Incredible technology."</p>
-                                        <div class="reviewer-info">
-                                            <span class="reviewer-name">Ana</span>
-                                            <span class="reviewer-divider">·</span>
-                                            <span class="reviewer-city">Struga</span>
-                                            <span class="reviewer-divider">·</span>
-                                            <span class="reviewer-role" data-i18n="review_4_role">Apartment Owner</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="review-slide">
-                                    <div class="review-card">
-                                        <div class="review-stars">★★★★★</div>
-                                        <p class="review-text" data-i18n="review_5_text">"Excellent service, fast installation, and the app is so simple to use. The team explained everything clearly. Highly recommend to anyone considering a smart home."</p>
-                                        <div class="reviewer-info">
-                                            <span class="reviewer-name">Darko</span>
-                                            <span class="reviewer-divider">·</span>
-                                            <span class="reviewer-city">Tetovo</span>
-                                            <span class="reviewer-divider">·</span>
-                                            <span class="reviewer-role" data-i18n="review_5_role">Homeowner</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Dot indicators -->
-                        <div class="reviews-dots" id="reviews-dots"></div>
-
-                        <!-- Nav arrows -->
-                        <button class="reviews-arrow prev-arrow" id="review-prev-arrow" aria-label="Previous review">&#8249;</button>
-                        <button class="reviews-arrow next-arrow" id="review-next-arrow" aria-label="Next review">&#8250;</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section-divider">
-                <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="sunrise-grad-reviews" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#FFE08A" />
-                            <stop offset="50%" stop-color="#FFB347" />
-                            <stop offset="100%" stop-color="#FF6B1A" />
-                        </linearGradient>
-                    </defs>
-                    <path class="divider-fill" d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-                    <path d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,58.7C1120,43,1280,21,1360,10.7L1440,0" fill="none" stroke="url(#sunrise-grad-reviews)" stroke-width="4"></path>
-                </svg>
-            </div>
-        </section>
-
-        <section id="capabilities" class="capabilities-section marquee-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="endless_title">Endless Possibilities</h2>
-
-                <div class="alexa-inner">
-                    <img src="assets/images/AGA.webp" alt="AGA Smart Home" class="alexa-bg-img">
-                    <div class="alexa-img-fog"></div>
-                    <div class="alexa-content-col">
-                        <p class="alexa-desc" data-i18n="alexa_desc_1">Control your entire home with a simple voice command. Set up personalized
-                            scenarios that activate multiple devices at once — all without touching a single button.</p>
-                        <p class="alexa-desc" data-i18n="alexa_desc_2">Monitor your home's energy consumption in real time, track usage patterns,
-                            and let the system automatically optimize to reduce waste and lower your bills.</p>
-                        <p class="alexa-desc" data-i18n="alexa_desc_3">Everything in one application — lights, blinds, thermostats, smart locks,
-                            cameras, and many more opportunities for a truly intelligent living environment.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="marquee-container">
-                <div class="marquee-track">
-                    <div class="marquee-item"><img src="icons/activity.svg" alt="Activity"></div>
-                    <div class="marquee-item"><img src="icons/air-vent.svg" alt="Air Vent"></div>
-                    <div class="marquee-item"><img src="icons/alarm-smoke.svg" alt="Smoke Alarm"></div>
-                    <div class="marquee-item"><img src="icons/brain.svg" alt="AI Brain"></div>
-                    <div class="marquee-item"><img src="icons/building-2.svg" alt="Building"></div>
-                    <div class="marquee-item"><img src="icons/cctv.svg" alt="CCTV"></div>
-                    <div class="marquee-item"><img src="icons/fingerprint-pattern.svg" alt="Fingerprint"></div>
-                    <div class="marquee-item"><img src="icons/house-wifi.svg" alt="House WiFi"></div>
-                    <div class="marquee-item"><img src="icons/key-round.svg" alt="Key"></div>
-                    <div class="marquee-item"><img src="icons/lamp-ceiling.svg" alt="Lamp"></div>
-                    <div class="marquee-item"><img src="icons/leaf.svg" alt="Eco"></div>
-                    <div class="marquee-item"><img src="icons/radio.svg" alt="Radio"></div>
-                    <div class="marquee-item"><img src="icons/shield-x.svg" alt="Security Alert"></div>
-                    <div class="marquee-item"><img src="icons/shield.svg" alt="Shield"></div>
-                    <div class="marquee-item"><img src="icons/snowflake.svg" alt="Cooling"></div>
-                    <div class="marquee-item"><img src="icons/speech.svg" alt="Voice"></div>
-                    <div class="marquee-item"><img src="icons/sun-snow.svg" alt="Climate"></div>
-                    <div class="marquee-item"><img src="icons/warehouse.svg" alt="Warehouse"></div>
-                    <div class="marquee-item"><img src="icons/wifi.svg" alt="WiFi"></div>
-                    <div class="marquee-item"><img src="icons/activity.svg" alt="Activity"></div>
-                    <div class="marquee-item"><img src="icons/air-vent.svg" alt="Air Vent"></div>
-                    <div class="marquee-item"><img src="icons/alarm-smoke.svg" alt="Smoke Alarm"></div>
-                    <div class="marquee-item"><img src="icons/brain.svg" alt="AI Brain"></div>
-                    <div class="marquee-item"><img src="icons/building-2.svg" alt="Building"></div>
-                    <div class="marquee-item"><img src="icons/cctv.svg" alt="CCTV"></div>
-                    <div class="marquee-item"><img src="icons/fingerprint-pattern.svg" alt="Fingerprint"></div>
-                    <div class="marquee-item"><img src="icons/house-wifi.svg" alt="House WiFi"></div>
-                    <div class="marquee-item"><img src="icons/key-round.svg" alt="Key"></div>
-                    <div class="marquee-item"><img src="icons/lamp-ceiling.svg" alt="Lamp"></div>
-                    <div class="marquee-item"><img src="icons/leaf.svg" alt="Eco"></div>
-                    <div class="marquee-item"><img src="icons/radio.svg" alt="Radio"></div>
-                    <div class="marquee-item"><img src="icons/shield-x.svg" alt="Security Alert"></div>
-                    <div class="marquee-item"><img src="icons/shield.svg" alt="Shield"></div>
-                    <div class="marquee-item"><img src="icons/snowflake.svg" alt="Cooling"></div>
-                    <div class="marquee-item"><img src="icons/speech.svg" alt="Voice"></div>
-                    <div class="marquee-item"><img src="icons/sun-snow.svg" alt="Climate"></div>
-                    <div class="marquee-item"><img src="icons/warehouse.svg" alt="Warehouse"></div>
-                    <div class="marquee-item"><img src="icons/wifi.svg" alt="WiFi"></div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="glass-footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <img src="assets/images/logo.PNG" alt="Cloud Tech Logo" class="footer-logo">
-            </div>
-            
-            <div class="cta-wrapper">
-                <a href="https://wa.me/38972227620?text=Hello%20Cloud%20Automation,%20I%20am%20interested%20in%20a%20smart%20home%20project."
-                    class="btn-primary cta-btn" target="_blank" rel="noopener noreferrer" data-i18n="free_consultation">Free Consultation</a>
-            </div>
-
-            <div class="contact-info">
-                <div class="info-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                        </path>
-                    </svg>
-                    <a href="tel:+38972227620" class="phone-link">+389 72 227 620</a>
-                </div>
-                <div class="info-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <span>info@cloudtech.mk</span>
-                </div>
-                <div class="info-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <span>fatlind@cloudtech.mk</span>
-                </div>
-                <a href="https://maps.app.goo.gl/JRSAVci78QzfxXD38" class="info-item" target="_blank"
-                    rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                    <span data-i18n="footer_location">Based in Skopje &amp; Struga</span>
-                </a>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/cloudtech_mk/" class="social-icon" aria-label="Instagram"
-                        target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=61572853431535" class="social-icon"
-                        aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <p class="copyright" data-i18n="copyright">&copy; 2026 Cloud Automation. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/38972227620?text=Hello%20Cloud%20Automation,%20I%20am%20interested%20in%20a%20smart%20home%20project." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
-
-    <!-- AI Chatbot -->
-    <div class="chatbot-container" id="chatbot">
-        <button class="chatbot-bubble" id="chatbot-bubble" aria-label="Open Chat">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-        </button>
-        <div class="chatbot-window" id="chatbot-window">
-            <div class="chatbot-header">
-                <span class="chatbot-title" data-i18n="chat_title">Cloud Assistant</span>
-                <button class="chatbot-close" id="chatbot-close">&times;</button>
-            </div>
-            <div class="chatbot-messages" id="chatbot-messages"></div>
-            <div class="chatbot-chips" id="chatbot-chips">
-                <button class="chip" data-chip="knx" data-i18n="chat_chip_knx">KNX Info</button>
-                <button class="chip" data-chip="pricing" data-i18n="chat_chip_pricing">Pricing</button>
-                <button class="chip" data-chip="ha" data-i18n="chat_chip_ha">Home Assistant</button>
-                <button class="chip" data-chip="contact" data-i18n="chat_chip_contact">Contact Us</button>
-            </div>
-            <div class="chatbot-input-area">
-                <input type="text" id="chatbot-input" data-i18n-placeholder="chat_placeholder" placeholder="Ask me anything...">
-                <button id="chatbot-send" aria-label="Send message">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                </button>
-            </div>
-        </div>
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="brand" href="#top" data-i18n-skip><img src="img/logo-ember.png" alt="" width="40" height="27"><span>CloudTech</span></a>
+    <span class="nav__mid mono">Smart homes + electrical</span>
+    <div class="nav__right">
+      <div class="lang" role="group" aria-label="Language"><button type="button" class="is-on" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="mk" aria-pressed="false">МК</button><button type="button" data-lang="sq" aria-pressed="false">SQ</button></div>
+      <a class="shop-btn" href="#shop">Shop</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><span class="menu-btn__label">Menu</span><span class="menu-btn__icon" aria-hidden="true"><i></i><i></i></span></button>
     </div>
+  </div>
+</header>
 
-    <script src="translations.js"></script>
-    <script src="script.js?v=1.2"></script>
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu__links" aria-label="Main">
+    <a href="#shop"><small>01</small>Shop</a>
+    <a href="#services"><small>02</small>Services</a>
+    <a href="#process"><small>03</small>Process</a>
+    <a href="#events"><small>04</small>Events</a>
+    <a href="#certificates"><small>05</small>Certificates</a>
+    <a href="#contact"><small>06</small>Contact</a>
+  </nav>
+  <div class="menu__foot">
+    <div class="lang" role="group" aria-label="Language"><button type="button" class="is-on" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="mk" aria-pressed="false">МК</button><button type="button" data-lang="sq" aria-pressed="false">SQ</button></div>
+    <a href="tel:+38972227620">+389 72 227 620</a>
+    <a href="mailto:info@cloudtech.mk">info@cloudtech.mk</a>
+  </div>
+</div>
+
+<main id="top">
+
+<section class="hero" id="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <picture class="hero__img hero__img--night"><source media="(max-width: 640px)" srcset="img/home-night-m.webp"><img src="img/home-night.webp" alt=""></picture>
+    <picture class="hero__img hero__img--lit"><source media="(max-width: 640px)" srcset="img/home-lit-m.webp"><img src="img/home-lit.webp" alt=""></picture>
+    <div class="hero__shade"></div>
+  </div>
+
+  <div class="hud hud--tl mono" aria-hidden="true"><span>41.1772° N</span><span>20.6788° E</span></div>
+  <div class="hud hud--tr mono"><span>KNX BUS <i class="dot"></i> <b id="busState">ONLINE</b></span><span>Skopje <b id="clock">--:--</b></span></div>
+
+  <div class="hero__mid">
+    <p class="hero__lead rv">We design, wire and program homes that respond to the people living in them. Lighting, climate, shading and security, in one quiet system.</p>
+    <div class="hero__actions rv">
+      <a class="btn" href="https://wa.me/38972227620?text=Hello%20CloudTech%2C%20I%20am%20interested%20in%20a%20smart%20home%20project.">Book a consultation <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <a class="badge rv" id="badge" href="#certificates" aria-label="Official KNX Partner, Partner number 151377. See our certificates.">
+    <span class="badge__card">
+      <span class="badge__plate"><img src="img/knx-partner.png" alt="KNX Partner logo" width="600" height="362"></span>
+      <span class="badge__text"><small>Official</small><b>KNX Partner</b><em>No. 151377</em></span>
+      <span class="badge__shine" aria-hidden="true"></span>
+    </span>
+  </a>
+
+  <h1 class="giant" aria-label="One system. Every room.">
+    <span class="giant__line"><span class="giant__in" data-i18n-html="g1">One system.</span></span>
+    <span class="giant__line"><span class="giant__in giant__in--ember" data-i18n-html="g2">Every room.</span></span>
+  </h1>
+</section>
+
+<div class="ticker" aria-label="Systems and partners">
+  <div class="ticker__track" data-i18n-skip>
+    <span>KNX</span><i>✦</i><span>Home Assistant</span><i>✦</i><span>openHAB</span><i>✦</i><span>Zennio</span><i>✦</i><span>Vimar</span><i>✦</i><span>GoodWe</span><i>✦</i><span>Shelly</span><i>✦</i>
+    <span>KNX</span><i>✦</i><span>Home Assistant</span><i>✦</i><span>openHAB</span><i>✦</i><span>Zennio</span><i>✦</i><span>Vimar</span><i>✦</i><span>GoodWe</span><i>✦</i><span>Shelly</span><i>✦</i>
+  </div>
+</div>
+
+<section class="shop" id="shop">
+  <div class="wrap shop__in">
+    <div class="shop__copy">
+      <p class="mono shop__tag rv">( CloudTech Shop <i></i> Opening soon )</p>
+      <h2 class="giant shop__title rv" data-i18n-html="shop_h">Shop<br><span>smart.</span></h2>
+      <p class="shop__lead rv">Smart LED kits and smart home products, picked and tested by our installers. Delivery across North Macedonia, Albania and Kosovo. Pay cash on delivery.</p>
+      <div class="shop__actions rv">
+        <a class="btn" href="https://shop.cloudtech.mk" data-shop-main>Shop now <span aria-hidden="true">↗</span></a>
+        <a class="shop__ask" href="https://wa.me/38972227620?text=Hello%20CloudTech%2C%20I%20would%20like%20to%20order%20from%20the%20shop.">Order on WhatsApp</a>
+      </div>
+    </div>
+    <div class="shop__visual rv" aria-hidden="true">
+      <div class="led"><span class="led__strip"></span><span class="led__glow"></span></div>
+      <div class="led led--2"><span class="led__strip"></span><span class="led__glow"></span></div>
+      <div class="led led--3"><span class="led__strip"></span><span class="led__glow"></span></div>
+      <p class="mono shop__drop">Drop 01 · Smart LED kits</p>
+    </div>
+  </div>
+  <div class="wrap shop__cats">
+    <a class="cat rv" href="https://shop.cloudtech.mk" data-shop><small class="mono">01 · First drop</small><b>Smart LED kits</b><span>App and voice control, warm white to full colour.</span></a>
+    <a class="cat rv" href="https://shop.cloudtech.mk" data-shop><small class="mono">02 · Soon</small><b>Smart switches &amp; plugs</b><span>Make any room smart without new wiring.</span></a>
+    <a class="cat rv" href="https://shop.cloudtech.mk" data-shop><small class="mono">03 · Soon</small><b>Sensors &amp; hubs</b><span>Motion, door and climate sensors, Home Assistant ready.</span></a>
+  </div>
+</section>
+
+<section class="statement">
+  <div class="wrap">
+    <p class="mono statement__tag rv">( Official KNX Partner )</p>
+    <p class="statement__text rv" data-i18n-html="stmt">We’re <b>CloudTech</b>. We plan every switch, sensor and cable with your architect, install it cleanly and program it ourselves, so your home <em>just works</em> for decades.</p>
+  </div>
+</section>
+
+<section class="bleed">
+  <img class="bleed__img" src="img/feat-panel.webp" srcset="img/feat-panel-sm.webp 700w, img/feat-panel.webp 1200w" sizes="100vw" alt="KNX electrical panel with actuators installed by CloudTech" loading="lazy">
+  <div class="bleed__shade"></div>
+  <div class="bleed__copy">
+    <p class="mono">02 / Electrical &amp; KNX panels</p>
+    <h2 class="giant giant--md" data-i18n-html="bleed_h">Behind<br>the wall.</h2>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap services__head">
+    <h2 class="rv">What we do</h2>
+    <div class="slider-nav"><button type="button" id="svPrev" aria-label="Previous">←</button><button type="button" id="svNext" aria-label="Next">→</button></div>
+  </div>
+  <div class="cards" id="svTrack">
+    <article class="card card--img">
+      <img src="img/home-lit-sm.webp" alt="3D floor plan of a smart home with every room lit" loading="lazy">
+      <div><span class="mono">01</span><h3>Smart home systems</h3><p>Every light, blind, thermostat and sensor in one system you control from the wall, your phone or your voice.</p></div>
+    </article>
+    <article class="card card--img">
+      <img src="img/feat-panel-sm.webp" alt="KNX panel" loading="lazy">
+      <div><span class="mono">02</span><h3>Electrical &amp; KNX panels</h3><p>Clean, documented panels and wiring, planned with your architect before the concrete and built to last decades.</p></div>
+    </article>
+    <article class="card card--img card--ha">
+      <img src="img/card-ha.webp" alt="Home Assistant floor plan dashboard with lit rooms" loading="lazy">
+      <div><span class="mono">03</span><h3>Home Assistant &amp; integrations</h3><p>One app for everything, running locally in your home. We connect devices from different makers and program the automations.</p></div>
+    </article>
+    <article class="card card--img">
+      <img src="img/card-lighting.webp" alt="Linear LED lighting washing a ribbed facade at night" loading="lazy">
+      <div><span class="mono">04</span><h3>Lighting</h3><p>Scenes and dimming in every room, from keypad, phone or voice.</p></div>
+    </article>
+    <article class="card card--img">
+      <img src="img/card-security.webp" alt="DoorBird video intercom with camera and access keypad" loading="lazy">
+      <div><span class="mono">05</span><h3>Security</h3><p>Cameras, alarm and access control, inside the same system.</p></div>
+    </article>
+    <article class="card card--img">
+      <img src="img/card-energy.webp" alt="Main distribution panel with breaker and energy meters" loading="lazy">
+      <div><span class="mono">06</span><h3>Energy</h3><p>Solar, storage and consumption you can actually see and control.</p></div>
+    </article>
+  </div>
+</section>
+
+<section class="block" aria-label="Credentials">
+  <div class="wrap">
+    <p class="mono block__tag rv">( Certified )</p>
+    <div class="block__grid">
+      <div class="rv"><b>151377</b><span>Official KNX Partner number</span></div>
+      <div class="rv"><b>100%</b><span>KNX Secure certification</span></div>
+      <div class="rv"><b>Vimar</b><span>Factory trained in Italy</span></div>
+      <div class="rv"><b>ETS</b><span>KNX programming, in-house</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <h2 class="rv" data-i18n-html="proc_h2">Planned before <i>the concrete.</i></h2>
+    <ol class="steps">
+      <li class="rv"><span class="mono">01</span><h3>Plan before the concrete</h3><p>We design the system with you and your architect while the walls are still open.</p></li>
+      <li class="rv"><span class="mono">02</span><h3>Install it cleanly</h3><p>Tidy panels and cabling, documented so anyone can understand them later.</p></li>
+      <li class="rv"><span class="mono">03</span><h3>Program it ourselves</h3><p>Scenes and automations set up in-house and tested room by room.</p></li>
+      <li class="rv"><span class="mono">04</span><h3>Stay with you</h3><p>Changes, updates and support for as long as you live there.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="events" id="events">
+  <div class="wrap services__head">
+    <h2 class="rv" data-i18n-html="ev_h2">Trained where the systems <i>are made.</i></h2>
+    <div class="slider-nav"><button type="button" id="evPrev" aria-label="Previous">←</button><button type="button" id="evNext" aria-label="Next">→</button></div>
+  </div>
+  <div class="ev-track" id="evTrack">
+    <article class="ev"><img src="img/ev-vimar-1-sm.webp" alt="CloudTech at Vimar headquarters, Italy" loading="lazy"><div><small class="mono">Italy · Oct 2026</small><h3>KNX training at Vimar</h3></div></article>
+    <article class="ev"><img src="img/ev-fair-1-sm.webp" alt="CloudTech with partners at the Skopje Fair" loading="lazy"><div><small class="mono">Skopje · Oct 2026</small><h3>Skopje Fair</h3></div></article>
+    <article class="ev"><img src="img/ev-goodwe-1-sm.webp" alt="GoodWe partner event" loading="lazy"><div><small class="mono">Oct 2026</small><h3>GoodWe partner event</h3></div></article>
+    <article class="ev"><img src="img/ev-draka-1-sm.webp" alt="CloudTech at the Draka presentation" loading="lazy"><div><small class="mono">Sep 2026</small><h3>Draka presentation</h3></div></article>
+    <article class="ev"><img src="img/ev-ifa-3-sm.webp" alt="KNX Professionals stand at IFA Berlin" loading="lazy"><div><small class="mono">Berlin · Sep 2026</small><h3>IFA Berlin</h3></div></article>
+    <article class="ev"><img src="img/ev-vimar-2-sm.webp" alt="Vimar well-contact plus KNX training board" loading="lazy"><div><small class="mono">Italy · Oct 2026</small><h3>KNX well-contact plus</h3></div></article>
+  </div>
+</section>
+
+<section class="certs" id="certificates">
+  <div class="wrap">
+    <h2 class="rv" data-i18n-html="cert_h2">Certified by the KNX Association, <i>Brussels.</i></h2>
+    <div class="cert-row">
+      <a class="cert rv" href="img/cert-partner.webp"><img src="img/cert-partner.webp" alt="KNX Partner certificate" loading="lazy"><span><b>KNX Partner</b><small>No. 151377 · KNX Basic course</small></span></a>
+      <a class="cert rv" href="img/cert-secure.webp"><img src="img/cert-secure.webp" alt="KNX Secure certificate" loading="lazy"><span><b>KNX Secure</b><small>Preventing access to KNX installations</small></span></a>
+      <a class="cert rv" href="img/cert-dev-guide.webp"><img src="img/cert-dev-guide.webp" alt="KNX Technology certificate" loading="lazy"><span><b>KNX Technology</b><small>Development Guide</small></span></a>
+      <a class="cert rv" href="img/cert-ets.webp"><img src="img/cert-ets.webp" alt="ETS eCampus certificate" loading="lazy"><span><b>ETS eCampus</b><small>Programming KNX in ETS</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact__in">
+    <p class="mono rv">( Have a project in mind? )</p>
+    <h2 class="rv" data-i18n-html="cta_h2">Building or renovating?<br>Talk to us before the concrete.</h2>
+    <div class="contact__row rv">
+      <p>Free consultation, no obligation. We usually reply the same day.</p>
+      <div class="contact__links">
+        <a class="btn" href="https://wa.me/38972227620?text=Hello%20CloudTech%2C%20I%20am%20interested%20in%20a%20smart%20home%20project.">Message us on WhatsApp <span aria-hidden="true">↗</span></a>
+        <a class="contact__phone" href="tel:+38972227620">+389 72 227 620</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <div><b>Contact</b><a href="tel:+38972227620">+389 72 227 620</a><a href="mailto:info@cloudtech.mk">info@cloudtech.mk</a></div>
+    <div><b>Visit</b><a href="https://maps.app.goo.gl/JRSAVci78QzfxXD38">Find us on the map</a></div>
+    <div><b>Follow</b><a href="https://www.instagram.com/cloudtech_mk/">Instagram</a><a href="https://www.facebook.com/profile.php?id=61572853431535">Facebook</a></div>
+    <div class="mono foot__meta"><span>© 2026 CloudTech</span><span>Official KNX Partner No. 151377</span></div>
+  </div>
+  <div class="foot__word" aria-hidden="true" data-i18n-skip>CLOUDTECH</div>
+</footer>
+
+<nav class="dock" aria-label="Quick actions">
+  <a class="dock__main" href="https://wa.me/38972227620?text=Hello%20CloudTech%2C%20I%20am%20interested%20in%20a%20smart%20home%20project.">WhatsApp us</a>
+  <a href="tel:+38972227620">Call</a>
+</nav>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
 </body>
-
 </html>
