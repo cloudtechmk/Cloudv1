@@ -128,6 +128,8 @@
   Object.assign(HTML.sq,{"shop_h": "Bli<br><span>smart.</span>"});
   Object.assign(D.mk,{"( CloudTech Shop": "( CloudTech продавница", "Opening soon )": "Наскоро )"});
   Object.assign(D.sq,{"( CloudTech Shop": "( Dyqani CloudTech", "Opening soon )": "Së shpejti )"});
+  Object.assign(D.mk,{"01 · Soon": "01 · Наскоро", "02 · First drop": "02 · Прва колекција"});
+  Object.assign(D.sq,{"01 · Soon": "01 · Së shpejti", "02 · First drop": "02 · Koleksioni i parë"});
   var lang = 'en', orig = new WeakMap(), origHtml = new WeakMap();
   function tr(s) { return (lang !== 'en' && D[lang][s]) || s; }
   function walk(root) {
