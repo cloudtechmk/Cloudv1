@@ -3,14 +3,7 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var body = document.body;
 
-  /* SHOP: put the live store address here when Shopify is ready, e.g. 'https://shop.cloudtech.mk'.
-     Until then every shop button opens a WhatsApp order. */
-  var SHOP_URL = '';
-  var WA_ORDER = 'https://wa.me/38972227620?text=' + encodeURIComponent('Hello CloudTech, I would like to order from the shop.');
-  document.querySelectorAll('[data-shop], [data-shop-main]').forEach(function (a) {
-    a.href = SHOP_URL || WA_ORDER;
-    if (SHOP_URL) { a.target = '_blank'; a.rel = 'noopener'; }
-  });
+  /* SHOP: all shop links point straight to https://shop.cloudtech.mk (set in index.html). */
   var bgm = /[?&]bg=(white|blue|black)/.exec(location.search); if (bgm) document.documentElement.setAttribute('data-bg', bgm[1]);
 
   /* loader: 000 → 100, then the curtain lifts and the house lights up */
