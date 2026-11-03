@@ -29,3 +29,9 @@ v5/
 v6/
 cloudtech-site-upload.zip
 old-noir/
+
+# raw project photos and videos (web versions live in img/projects)
+projects 2/
+projects/*.MOV
+projects/*.mov
+tools/
